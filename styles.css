@@ -1,0 +1,294 @@
+/* Variables de Estilo - Identidad SENA */
+:root {
+    --verde-sena: #047a40;
+    --verde-sena-hover: #035a2f;
+    --verde-claro: #e6f4ea;
+    --oscuro: #1e293b;
+    --gris-fondo: #f4f7f6;
+    --gris-borde: #e2e8f0;
+    --texto: #334155;
+    --blanco: #ffffff;
+    --rojo: #dc2626;
+    --amarillo: #d97706;
+}
+
+/* Reseteo General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--gris-fondo);
+    color: var(--texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+.header {
+    background-color: var(--verde-sena);
+    color: var(--blanco);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-sena {
+    background-color: var(--blanco);
+    color: var(--verde-sena);
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    letter-spacing: 1px;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+}
+
+.header p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav a:hover, .nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Contenedor Principal */
+.main-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+}
+
+/* Tarjetas Estadísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--verde-sena);
+}
+
+.stat-card h3 {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--oscuro);
+}
+
+.text-success { color: var(--verde-sena); }
+.text-warning { color: var(--amarillo); }
+.text-danger { color: var(--rojo); }
+
+/* Secciones e Inventario */
+.content-section {
+    background-color: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+/* Tablas */
+.table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.data-table th, .data-table td {
+    padding: 0.9rem;
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+.data-table th {
+    background-color: var(--gris-fondo);
+    color: var(--oscuro);
+    font-size: 0.9rem;
+}
+
+/* Insignias de Estado */
+.badge {
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge-success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.badge-warning {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.badge-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Formularios */
+.forms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-form h2 {
+    color: var(--verde-sena);
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid var(--verde-claro);
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--texto);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--verde-sena);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Botones */
+.btn {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--verde-sena);
+    color: var(--blanco);
+}
+
+.btn-primary:hover {
+    background-color: var(--verde-sena-hover);
+}
+
+.btn-success {
+    background-color: #10b981;
+    color: var(--blanco);
+}
+
+.btn-success:hover {
+    background-color: #059669;
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: var(--texto);
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+}
+
+.btn-sm {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Pie de Página */
+.footer {
+    background-color: var(--oscuro);
+    color: #94a3b8;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.85rem;
+    margin-top: auto;
+}

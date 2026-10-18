@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca SENA - Control de Equipos e Inventario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-sena">SENA</div>
+            <div>
+                <h1>Biblioteca SENA</h1>
+                <p>Sistema de Gestión de Equipos e Inventario</p>
+            </div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#inventario" class="active">Inventario</a></li>
+                <li><a href="#prestamos">Préstamos</a></li>
+                <li><a href="#devoluciones">Devoluciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+
+        <!-- Métricas Rápidas / Estadísticas -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Equipos</h3>
+                <p class="stat-number">120</p>
+            </div>
+            <div class="stat-card">
+                <h3>Equipos Disponibles</h3>
+                <p class="stat-number text-success">85</p>
+            </div>
+            <div class="stat-card">
+                <h3>En Préstamo</h3>
+                <p class="stat-number text-warning">30</p>
+            </div>
+            <div class="stat-card">
+                <h3>En Mantenimiento</h3>
+                <p class="stat-number text-danger">5</p>
+            </div>
+        </section>
+
+        <!-- Sección de Inventario de Equipos -->
+        <section id="inventario" class="content-section">
+            <div class="section-header">
+                <h2>Inventario General de Equipos</h2>
+                <button class="btn btn-primary">+ Agregar Nuevo Equipo</button>
+            </div>
+            
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Código / Serial</th>
+                            <th>Tipo de Equipo</th>
+                            <th>Marca y Modelo</th>
+                            <th>Ubicación / Sala</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>EQ-SENA-001</strong></td>
+                            <td>Portátil</td>
+                            <td>Lenovo ThinkPad L14</td>
+                            <td>Biblioteca - Sala A</td>
+                            <td><span class="badge badge-success">Disponible</span></td>
+                            <td><button class="btn btn-sm btn-secondary">Editar</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>EQ-SENA-002</strong></td>
+                            <td>Portátil</td>
+                            <td>HP ProBook 440</td>
+                            <td>Biblioteca - Sala B</td>
+                            <td><span class="badge badge-warning">En Préstamo</span></td>
+                            <td><button class="btn btn-sm btn-secondary">Editar</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>EQ-SENA-003</strong></td>
+                            <td>Tablet</td>
+                            <td>Samsung Galaxy Tab S7</td>
+                            <td>Mesa de Ayuda</td>
+                            <td><span class="badge badge-danger">Mantenimiento</span></td>
+                            <td><button class="btn btn-sm btn-secondary">Editar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Formularios Grid: Préstamos y Devoluciones -->
+        <div class="forms-grid">
+            
+            <!-- Registro de Préstamos -->
+            <section id="prestamos" class="content-section card-form">
+                <h2>Registro de Préstamo de Equipo</h2>
+                <form action="#" method="POST" class="form">
+                    <div class="form-group">
+                        <label for="codigo-equipo">Código / Serial del Equipo</label>
+                        <input type="text" id="codigo-equipo" name="codigo-equipo" placeholder="Ej. EQ-SENA-001" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="documento-aprendiz">Documento de Identidad (Aprendiz/Instructor)</label>
+                        <input type="text" id="documento-aprendiz" name="documento-aprendiz" placeholder="Ej. 1002345678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre-solicitante">Nombre Completo del Solicitante</label>
+                        <input type="text" id="nombre-solicitante" name="nombre-solicitante" placeholder="Nombre completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="programa-formacion">Programa de Formación / Ficha</label>
+                        <input type="text" id="programa-formacion" name="programa-formacion" placeholder="Ej. ADSO - Ficha 2721400" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha-prestamo">Fecha y Hora Préstamo</label>
+                            <input type="datetime-local" id="fecha-prestamo" name="fecha-prestamo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hora-limite">Hora Límite Entrega</label>
+                            <input type="time" id="hora-limite" name="hora-limite" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Registrar Préstamo</button>
+                </form>
+            </section>
+
+            <!-- Registro de Devoluciones -->
+            <section id="devoluciones" class="content-section card-form">
+                <h2>Registro de Devolución de Equipo</h2>
+                <form action="#" method="POST" class="form">
+                    <div class="form-group">
+                        <label for="dev-codigo-equipo">Código / Serial del Equipo</label>
+                        <input type="text" id="dev-codigo-equipo" name="dev-codigo-equipo" placeholder="Ej. EQ-SENA-002" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dev-documento">Documento del Solicitante</label>
+                        <input type="text" id="dev-documento" name="dev-documento" placeholder="Número de documento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estado-devolucion">Estado de Recepción del Equipo</label>
+                        <select id="estado-devolucion" name="estado-devolucion" required>
+                            <option value="">-- Seleccionar Estado --</option>
+                            <option value="bueno">Excelente Estado / Completo</option>
+                            <option value="falla">Con Fallas Técnicas</option>
+                            <option value="incompleto">Falta Accesorio (Cargador/Mouse)</option>
+                            <option value="dañado">Dañado / Golpeado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observaciones">Observaciones o Novedades</label>
+                        <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escriba cualquier novedad o detalle técnico sobre la devolución..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-block">Confirmar Devolución</button>
+                </form>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <p>&copy; 2026 Biblioteca SENA - Servicio Nacional de Aprendizaje. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
